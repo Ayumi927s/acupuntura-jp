@@ -1,0 +1,33 @@
+@use "global" as *;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// 使い方例
+// ```html
+// <h2>
+//   <img src="./assets/img/heading_movie.png" alt="Movie">
+//   <span class="visually-hidden">Movie</span>
+// </h2>
+// ```
+// ```css
+// .visually-hidden {
+//   position: absolute;
+//   width: 1px;
+//   height: 1px;
+//   padding: 0;
+//   margin: -1px;
+//   overflow: hidden;
+//   clip: rect(0, 0, 0, 0);
+//   white-space: nowrap;
+//   border: 0;
+// }
+// ```
