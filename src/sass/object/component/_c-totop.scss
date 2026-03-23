@@ -1,5 +1,5 @@
-@use "global" as *;
-@use "sass:map";
+@use 'global' as *;
+@use 'sass:map';
 
 .c-totop {
   display: block;
@@ -8,15 +8,15 @@
   bottom: rem(20);
   visibility: hidden;
   opacity: 0;
-  transition: all 0.3s ease 0s;
+  transition: all .3s ease 0s;
   width: rem(50);
   height: rem(50);
   background-color: $color-secondary;
   z-index: map.get($map: $layer, $key: 'floating');
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;

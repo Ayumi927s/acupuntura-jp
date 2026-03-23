@@ -1,9 +1,21 @@
-@use "sass:map";
+@use 'sass:map';
+
+// ================================================================
 // レイアウト幅
-$layout-width-canvas: 1440px;
-$layout-width-container: 1060px;
+// モバイルファースト (shiatsu-seitai 参考: 最大幅 430px)
+// ================================================================
+$layout-width-canvas: 430px;
+$layout-width-container: 330px;
+$layout-width-container-wide: 360px;
 $layout-width-vw: $layout-width-container;
 $layout-sp-vw: 375px;
+
+// CSS変数として定義 (デザイントークン用)
+:root {
+  --content-width: #{$layout-width-canvas};
+  --content-inner-width: #{$layout-width-container};
+  --content-inner-width-w: #{$layout-width-container-wide};
+}
 
 //ブレイクポイント
 $breakpoints: (
@@ -22,7 +34,6 @@ $mediaquerys: (
   lg: "screen and (min-width: #{map.get($breakpoints,'lg')}px)",
   xl: "screen and (min-width: #{map.get($breakpoints,'xl')}px)",
 );
-
 
 // ヘッダー高さ
 $header-height: 80px;

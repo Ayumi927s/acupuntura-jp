@@ -1,4 +1,4 @@
-@use "global" as *;
+@use 'global' as *;
 
 .l-container {
   margin: 0 auto;
@@ -13,8 +13,9 @@
 }
 
 @include mq(md) {
+
   .l-container.l-container--narrow {
-    max-width: $layout-width-container * 0.8 + $pd-tab*2;
+    max-width: $layout-width-container * .8 + $pd-tab*2;
   }
 
   .l-container.l-container--wide {

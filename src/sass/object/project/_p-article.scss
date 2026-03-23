@@ -8,6 +8,7 @@
 .p-article__meta {}
 
 .p-article__date {
+
   & + & {
     margin-left: 20px;
   }
@@ -120,6 +121,7 @@
   }
 
   li:not([class]) {
+
     & + li {
       margin-top: rem(10);
     }
@@ -202,8 +204,8 @@
 
   figcaption {
     margin-top: 0;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
     color: $color-subText;
     font-weight: $fw-regular;
     font-size: rem(14);
@@ -236,13 +238,13 @@
     &::before {
       content: '\f10d';
       top: 0;
-      left: 0.5em;
+      left: .5em;
     }
 
     &::after {
       content: '\f10e';
       bottom: 0;
-      right: 0.5em;
+      right: .5em;
     }
   }
 

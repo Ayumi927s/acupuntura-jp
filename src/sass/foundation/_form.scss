@@ -1,5 +1,5 @@
-@use "global" as *;
-@use "sass:math";
+@use 'global' as *;
+@use 'sass:math';
 
 $color-form-bd: #707070;
 $color-form-bd_active: #707070;
@@ -11,7 +11,7 @@ $size-checkbox: 1.625em;
 $size-checkbox-pd_left: 1.875em;
 
 $size-radio: 1.625em;
-$size-radio_active: 0.625em;
+$size-radio_active: .625em;
 $size-radio-pd_left: 1.875em;
 
 /************************************************************************
@@ -97,6 +97,7 @@ textarea {
 }
 
 input {
+
   &:focus {
     outline: none;
     border-color: $color-form-bd_active;
@@ -124,7 +125,7 @@ input[type='radio'] {
     &::before {
       position: absolute;
       content: '';
-      top: 0.5lh;
+      top: .5lh;
       left: 0;
       transform: translateY(-50%);
       background: #fff;
@@ -138,7 +139,7 @@ input[type='radio'] {
     &::after {
       content: '';
       position: absolute;
-      top: 0.5lh;
+      top: .5lh;
       // left: ($size-radio - $size-radio_active) / 2;
       left: math.div(($size-radio - $size-radio_active), 2);
       transform: translateY(-50%);
@@ -148,7 +149,7 @@ input[type='radio'] {
       width: $size-radio_active;
       height: $size-radio_active;
       opacity: 0;
-      transition: opacity 0.3s ease 0s;
+      transition: opacity .3s ease 0s;
     }
   }
 
@@ -157,6 +158,7 @@ input[type='radio'] {
   }
 
   &:checked + span {
+
     &::after {
       opacity: 1;
     }
@@ -187,7 +189,7 @@ input[type='checkbox'] {
       height: $size-checkbox;
       position: absolute;
       left: 0;
-      top: 0.5lh;
+      top: .5lh;
       transform: translateY(-50%);
       border: 1px solid $color-form-bd;
     }
@@ -199,12 +201,12 @@ input[type='checkbox'] {
       width: math.div($size-checkbox, 2);
       height: $size-checkbox;
       position: absolute;
-      top: 0.5lh;
+      top: .5lh;
       left: 0;
-      transform: translateY(-70%) translateX(0.5em) rotate(45deg);
-      border-right: 0.25em solid $color-check_active;
-      border-bottom: 0.25em solid $color-check_active;
-      transition: opacity 0.3s ease 0s;
+      transform: translateY(-70%) translateX(.5em) rotate(45deg);
+      border-right: .25em solid $color-check_active;
+      border-bottom: .25em solid $color-check_active;
+      transition: opacity .3s ease 0s;
       opacity: 0;
     }
   }
@@ -235,7 +237,7 @@ input[type='number'] {
 
 select {
   appearance: none;
-  padding: 0.4em 2.4em 0.4em 0.8em;
+  padding: .4em 2.4em .4em .8em;
   border-radius: 0;
   // background-image: url(../img/arrow.svg);
   // background-position: right 6px center;

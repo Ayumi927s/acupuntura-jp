@@ -1,5 +1,5 @@
 @use 'global' as *;
-@use "sass:color";
+@use 'sass:color';
 
 // 色
 $btn-background-color: $color-main;
@@ -31,7 +31,7 @@ $btn-line-height: $lh-base;
   background-image: none;
   background-color: $btn-background-color;
   border-radius: $btn-border-radius;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
   color: $btn-font-color;
   font: inherit;
   font-size: $btn-font-size;
@@ -40,7 +40,7 @@ $btn-line-height: $lh-base;
   line-height: $btn-line-height;
   text-align: center;
   text-decoration: none;
-  transition: 0.3s ease 0s;
+  transition: .3s ease 0s;
   transition-property: color, background-color, border-color;
 
   &:hover,
@@ -67,10 +67,12 @@ $btn-line-height: $lh-base;
 
   &::before {
     content: '';
+
     /*絶対配置でキラッと光るの位置を決める*/
     position: absolute;
     top: 0;
     left: -75%;
+
     /*キラッと光る形状*/
     width: 50%;
     height: 100%;
@@ -86,12 +88,13 @@ $btn-line-height: $lh-base;
     border-color: $btn-background-color; // その要素もしくは親要素のcolorの値と同じになる
 
     &::before {
-      animation: shine 0.7s;
+      animation: shine .7s;
     }
   }
 }
 
 @keyframes shine {
+
   100% {
     left: 125%;
   }
@@ -108,7 +111,7 @@ $btn-line-height: $lh-base;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 0.83em;
+    right: .83em;
     font: $ff-awesome;
     font-weight: $fw-heavy;
   }
@@ -145,7 +148,7 @@ $btn-line-height: $lh-base;
   font-size: rem(16);
   text-align: center;
   text-decoration: none;
-  transition: 0.25s;
+  transition: .25s;
 
   &:hover,
   &:focus {
@@ -161,11 +164,11 @@ $btn-line-height: $lh-base;
 .c-beforeIconBtn {
   position: relative;
   display: inline-block;
-  padding: 0.2em 0.3em;
+  padding: .2em .3em;
   border: 1px solid currentColor;
   color: $color-main;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all .3s;
 
   &:hover,
   &:focus {
@@ -175,7 +178,7 @@ $btn-line-height: $lh-base;
 
   &::before {
     display: inline-block;
-    margin-right: 0.5em;
+    margin-right: .5em;
     font: $ff-awesome;
     font-weight: $fw-heavy;
   }

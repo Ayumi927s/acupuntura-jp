@@ -1,4 +1,5 @@
-@use "global" as *;
+@use 'global' as *;
+
 .visually-hidden {
   position: absolute;
   width: 1px;

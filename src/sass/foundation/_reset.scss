@@ -43,7 +43,7 @@ body {
   line-break: strict;
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  text-underline-offset: 0.2em;
+  text-underline-offset: .2em;
 }
 
 article,
@@ -132,10 +132,10 @@ a {
   // outline: none;
   text-decoration: none;
   display: inline-block;
-  transition: opacity 0.3s ease 0s;
+  transition: opacity .3s ease 0s;
 }
 
-a[href="*"] {
+a[href='*'] {
   cursor: pointer;
 
   &:hover,
@@ -210,7 +210,7 @@ cite {
 code,
 kbd {
   background-color: $light-gray;
-  padding: 0.25em 0.5em;
+  padding: .25em .5em;
 }
 
 em {
@@ -236,7 +236,7 @@ sup {
 
 var {
   background-color: $light-gray;
-  padding: 0.25em 0.5em;
+  padding: .25em .5em;
   font-style: italic;
 }
 

@@ -1,8 +1,8 @@
-@use "foundation/_reset";
-@use "foundation/!(_reset)**";
-@use "app/**";
-@use "external/**";
-@use "layout/**";
-@use "object/component/**";
-@use "object/project/**";
-@use "object/utility/**";
+@use 'foundation/_reset';
+@use 'foundation/!(_reset)**';
+@use 'app/**';
+@use 'external/**';
+@use 'layout/**';
+@use 'object/component/**';
+@use 'object/project/**';
+@use 'object/utility/**';

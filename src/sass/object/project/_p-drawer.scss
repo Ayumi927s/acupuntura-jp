@@ -1,12 +1,12 @@
 @use 'global' as *;
-@use "sass:map";
+@use 'sass:map';
 
 // 色
 $drawer-bar-background: $color-text;
 $drawer-bar-font-color: $color-text;
 $drawer-content-background: $white;
 $drawer-content-font-color: $color-text;
-$drawer-background-color: rgba(0, 0, 0, 0.25);
+$drawer-background-color: rgba(0, 0, 0, .25);
 
 // サイズ
 $drawer-bar-space: 5px;
@@ -37,9 +37,7 @@ $is-bar-text-show: false;
 
     @if $is-bar-text-show {
       display: block;
-    }
-
-    @else {
+    } @else {
       display: none;
     }
 
@@ -72,13 +70,14 @@ $is-bar-text-show: false;
   background: $drawer-bar-background;
   width: 100%;
   height: $drawer-bar-height;
-  transition: all 0.3s linear 0s;
+  transition: all .3s linear 0s;
 
   &:first-child {
     margin-top: 0;
   }
 
   .is-opened & {
+
     &:nth-child(2) {
       background: transparent;
     }
@@ -96,7 +95,7 @@ $is-bar-text-show: false;
 }
 
 .p-drawer__bg {
-  transition: all 0.3s ease 0s;
+  transition: all .3s ease 0s;
 
   &.is-opened {
     background: $drawer-background-color;
@@ -124,12 +123,12 @@ $is-bar-text-show: false;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   color: $drawer-content-font-color;
-  transition: transform 0.5s ease 0s;
+  transition: transform .5s ease 0s;
   text-align: center;
 
   &.is-opened {
     transform: translateX(0);
-    box-shadow: 6px 0 25px rgba(#000, 0.16);
+    box-shadow: 6px 0 25px rgba(#000, .16);
   }
 }
 
@@ -164,13 +163,14 @@ $is-bar-text-show: false;
 .p-drawer__navList {}
 
 .p-drawer__navItem {
+
   & + & {
-    margin-top: 0.5em;
+    margin-top: .5em;
   }
 }
 
 .p-drawer__navLink {
   display: block;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: .5em;
+  padding-bottom: .5em;
 }

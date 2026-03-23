@@ -1,8 +1,8 @@
-@use "color" as *;
-@use "size" as *;
-@use "mixin" as *;
-@use "typography" as *;
-@use "function" as *;
+@use 'color' as *;
+@use 'size' as *;
+@use 'mixin' as *;
+@use 'typography' as *;
+@use 'function' as *;
 
 
 @mixin post_single_style {
@@ -27,12 +27,12 @@
     font-size: rem(26);
     background-color: $black;
     color: $white;
-    padding: 0.3em 0.4em;
+    padding: .3em .4em;
   }
 
   h3 {
     font-size: rem(24);
-    padding-left: 0.5em;
+    padding-left: .5em;
     border-left: 5px solid $black;
   }
 

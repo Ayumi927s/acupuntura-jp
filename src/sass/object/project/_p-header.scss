@@ -1,76 +1,100 @@
-@use "global" as *;
-@use "sass:map";
+@use 'global' as *;
+@use 'sass:map';
 
+// ============================================================
+// ヘッダー
+// 参考: shiatsu-seitai の .header スタイル
+// ============================================================
 .p-header {
-  padding-top: rem(20);
-  padding-bottom: rem(20);
-  // height: $header-height-sp;
-  background-color: $color-header-bg;
-
-  @include mq(md) {
-    // height: $header-height;
-  }
-}
-
-.p-header__inner {
+  height: rem(80);
   display: flex;
   align-items: center;
-  // height: 100%;
-}
+  padding: rem(5) rem(10);
+  gap: rem(16);
+  background-color: $white;
+  position: sticky;
+  top: 0;
+  z-index: map.get($layer, header);
 
-.p-header__logo {
-  font-size: rem(30);
-  font-weight: $fw-bold;
-  line-height: 1;
-  height: 90%;
-  z-index: map.get($layer, 'drawer') + 1;
-
-  @include mq(md) {
-    font-size: rem(40);
-  }
-
-  a {
-    display: flex;
-    align-items: center;
+  &__logo {
     height: 100%;
-  }
 
-  img,
-  svg {
-    object-fit: contain;
-    width: auto;
-    height: inherit;
-  }
-}
-
-.p-header__nav {
-  display: none;
-
-  @include mq(md) {
-    display: block;
-    margin-left: auto;
-    padding-left: rem(20);
-
-    ul {
-      display: flex;
-      align-items: center;
-      gap: rem(46);
+    a {
+      display: block;
+      height: 100%;
     }
 
-    li {
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
 
-      > a {
-        font-size: rem(18);
-        font-weight: $fw-bold;
-        display: block;
-      }
+  &__link {
+    flex: 1;
+  }
+
+  // CTAリンク内のフォントサイズ調整
+  &__cta {
+    .c-btn-cta {
+      font-size: rem(16);
     }
   }
 }
 
-.p-header__drawer {
+// ============================================================
+// CTAリンク共通スタイル (ヘッダー / フッター固定ボタン)
+// 参考: shiatsu-seitai の .cta-link, .btn
+// ============================================================
+.c-btn-cta {
+  display: flex;
+  column-gap: rem(8);
+  height: rem(60);
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(360deg, #03983a 82.61%, #79cb9a 95%);
+  color: $white;
+  font-size: rem(18);
+  font-weight: $fw-bold;
+  letter-spacing: 0;
+  border: rem(1) solid #027b2f;
+  border-radius: rem(30);
+  padding: rem(20) min(10.4vw, rem(30)) rem(15) min(7.2vw, rem(30));
+  box-shadow: 0 rem(2) rem(4) rgba(0, 0, 0, .25);
+  position: relative;
+  word-break: keep-all;
+  text-decoration: none;
+  transition: opacity .3s;
 
-  @include mq(md) {
-    display: none;
+  &:hover {
+    opacity: .85;
+  }
+
+  // WhatsApp アイコン (左)
+  &::before {
+    content: '';
+    width: rem(24);
+    height: rem(24);
+    background: url('../img/common/icon-whatsapp.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: min(4.62vw, rem(9));
+    margin: auto;
+  }
+
+  // 矢印アイコン (右)
+  &::after {
+    content: '';
+    width: rem(16);
+    height: rem(16);
+    background: url('../img/common/icon-cta-arrow.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: min(4.62vw, rem(18));
+    margin: auto;
   }
 }

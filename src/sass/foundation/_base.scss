@@ -56,7 +56,7 @@ footer {
 * base
 ************************************************************************/
 a[target='_blank']:not([class]) {
-  transition: color 0.3s;
+  transition: color .3s;
 
   &::after {
     display: inline-block;
@@ -120,6 +120,7 @@ address {
 
 
 details {
+
   .icon {
     display: block;
     aspect-ratio: 1;
@@ -139,7 +140,7 @@ details {
 
     &::after {
       transform: rotate(90deg);
-      transition: transform 0.3s;
+      transition: transform .3s;
     }
   }
 
@@ -155,12 +156,14 @@ details.is-closing[open] > summary .icon::after {
 }
 
 summary {
+
   /* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
   display: block;
   cursor: pointer;
 }
 
 summary::-webkit-details-marker {
+
   /* Safariで表示されるデフォルトの三角形アイコンを消します */
   display: none;
 }

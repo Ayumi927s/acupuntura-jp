@@ -1,11 +1,17 @@
-@use "global" as *;
+@use 'global' as *;
 
 .l-body {
-  // margin-top: var(--header-height, $header-height);
-  // min-height: calc(100vh - #{var(--header-height, $header-height)});
+  background-color: $white;
+  color: $color-text;
+}
 
-  @include mq(md) {
-    // margin-top: var(--header-height, $header-height-sp);
-    // min-height: calc(100vh - #{var(--header-height, $header-height-sp)});
-  }
+.l-wrapper {
+  width: 100%;
+  max-width: $layout-width-canvas;
+  min-width: 320px;
+  background-color: $color-bg-light;
+  margin: auto;
+  overflow: hidden;
+  box-shadow: 0 2px 14px -2px rgba(0, 0, 0, .25);
+  position: relative;
 }

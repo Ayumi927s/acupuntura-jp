@@ -1,4 +1,4 @@
-@use "global" as *;
+@use 'global' as *;
 
 
 .js-fadeIn {
@@ -27,6 +27,7 @@
 
 
 @keyframes fadeInLeft {
+
   from {
     opacity: 0;
     -webkit-transform: translate3d(-2%, 0, 0);
@@ -41,6 +42,7 @@
 }
 
 @keyframes fadeInRight {
+
   from {
     opacity: 0;
     -webkit-transform: translate3d(2%, 0, 0);
@@ -55,6 +57,7 @@
 }
 
 @keyframes fadeInUp {
+
   from {
     opacity: 0;
     transform: translate3d(0, 2%, 0);
@@ -67,6 +70,7 @@
 }
 
 @keyframes fadeIn {
+
   from {
     opacity: 0;
   }
@@ -77,6 +81,7 @@
 }
 
 @keyframes fadeOut {
+
   from {
     opacity: 1;
   }
@@ -92,7 +97,7 @@
 .fadeInUp,
 .fadeIn,
 .fadeOut {
-  animation-duration: 0.5s;
+  animation-duration: .5s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }

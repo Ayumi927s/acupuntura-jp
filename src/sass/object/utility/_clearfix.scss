@@ -1,6 +1,7 @@
-@use "global" as *;
+@use 'global' as *;
 
 .clearfix {
+
   &::after {
     content: '';
     display: block;

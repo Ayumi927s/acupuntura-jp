@@ -1,16 +1,25 @@
 {
   "plugins": ["stylelint-scss"],
   "extends": ["stylelint-config-wordpress/scss", "stylelint-config-prettier"],
+  "ignoreFiles": [
+    "src/sass/external/**/*.scss",
+    "src/sass/foundation/_reset.scss",
+    "src/sass/foundation/_form.scss"
+  ],
   "rules": {
     "color-hex-length": "short",
     "color-no-invalid-hex": true,
-    "custom-property-no-outside-root": true,
     "indentation": 2,
     "length-zero-no-unit": true,
     "media-feature-name-no-vendor-prefix": true,
     "number-leading-zero": "never",
-    "selector-root-no-composition": true,
     "string-quotes": "single",
+    "unit-no-unknown": [true, { "ignoreUnits": ["dvh", "dvw"] }],
+    "block-no-empty": null,
+    "selector-class-pattern": null,
+    "no-descending-specificity": null,
+    "function-url-quotes": null,
+    "scss/selector-no-redundant-nesting-selector": null,
     "max-line-length": [
       300,
       {
