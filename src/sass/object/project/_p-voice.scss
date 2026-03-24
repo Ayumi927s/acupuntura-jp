@@ -1,0 +1,26 @@
+@use 'global' as *;
+
+.p-voice {
+  margin-top: rem(54);
+  margin-bottom: rem(60);
+
+  &__inner {
+    padding: 0 rem(15);
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .c-section-title {
+    line-height: 1;
+    margin-bottom: rem(20);
+  }
+
+  &__box {
+    iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 351 / 230;
+      vertical-align: bottom;
+    }
+  }
+}

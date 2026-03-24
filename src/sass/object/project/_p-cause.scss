@@ -1,0 +1,117 @@
+@use 'global' as *;
+
+.p-cause {
+  &__main {
+    background: url('../img/cause-bg.jpg') no-repeat;
+    background-size: cover;
+    padding: rem(20) 0 rem(48);
+
+    .l-container {
+      background-color: rgba(141, 140, 140, 0.6); // #8d8c8c99
+      padding: rem(22) rem(15);
+    }
+  }
+
+  .c-section-title {
+    color: $white;
+    font-size: rem(24);
+    line-height: 1.4;
+    padding-bottom: rem(10);
+    border-bottom: 3px double $color-text;
+    margin-bottom: rem(20);
+
+    &__sub {
+      color: $color-text;
+    }
+  }
+
+  &__item {
+    background-color: #d9d9d9;
+    letter-spacing: 0;
+
+    & + & {
+      margin-top: rem(16);
+    }
+  }
+
+  &__title {
+    padding: rem(15);
+    text-align: center;
+    font-size: rem(18);
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      width: rem(16);
+      height: rem(16);
+      background: url('../img/cause-arrow.png') no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: rem(15);
+      margin: auto;
+      transform: rotate(180deg);
+      transition: transform 0.3s;
+    }
+
+    &.active::before {
+      transform: rotate(0);
+    }
+  }
+
+  &__content {
+    padding: rem(15) rem(30);
+    border-top: 1px dotted $color-text;
+    display: none; // JavaScript will control this
+  }
+
+  &__bottom {
+    height: rem(278);
+    background: url('../img/cause-bottom.png') no-repeat;
+    background-size: 100% 100%;
+    color: $white;
+    margin-top: -6.8%;
+    padding-top: rem(7);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bottomText1 {
+    span {
+      display: block;
+      width: max-content;
+      background-color: $color-text;
+      font-size: rem(20);
+      line-height: 1;
+      letter-spacing: 0;
+      margin: auto;
+      padding: rem(8) rem(10);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: rem(15);
+      height: rem(40);
+      background: url('../img/arrow-w.png') no-repeat;
+      background-size: contain;
+      margin: auto;
+    }
+  }
+
+  &__bottomText2 {
+    font-size: rem(24);
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: rem(8);
+
+    em {
+      font-style: normal;
+      font-size: rem(28);
+      font-weight: $fw-bold;
+      border-bottom: 3px double $color-text;
+    }
+  }
+}

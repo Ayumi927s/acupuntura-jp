@@ -1,0 +1,150 @@
+@use 'global' as *;
+
+.p-reason {
+  &__title {
+    margin-bottom: rem(10);
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      width: 100vw;
+      height: 1px;
+      background-color: $color-primary;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: rem(27);
+      z-index: -1;
+    }
+  }
+
+  &__titleHead {
+    display: block;
+    width: max-content;
+    background-color: $color-primary;
+    color: $white;
+    font-size: rem(16);
+    line-height: 1.2;
+    letter-spacing: 0;
+    padding: rem(8) rem(20);
+    border-radius: rem(30);
+    margin: 0 auto rem(16);
+  }
+
+  &__titleBottom {
+    display: block;
+    width: max-content;
+    font-size: rem(24);
+    margin: rem(12) auto 0;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      width: rem(12);
+      height: rem(34);
+      position: absolute;
+      bottom: 0;
+    }
+
+    &::before {
+      background: url('../img/reason-title-l.png') no-repeat;
+      background-size: contain;
+      left: rem(-32);
+    }
+
+    &::after {
+      background: url('../img/reason-title-r.png') no-repeat;
+      background-size: contain;
+      right: rem(-32);
+    }
+
+    em {
+      font-style: normal;
+      font-size: clamp(16px, 10.3vw, 40px);
+    }
+  }
+
+  &__box {
+    width: 90%;
+    max-width: $layout-width-container;
+    margin: auto;
+  }
+
+  &__item {
+    margin-top: rem(40);
+  }
+
+  &__itemTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  &__itemNo {
+    width: max-content;
+    font-family: $ff-en;
+    font-size: rem(14);
+    font-weight: $fw-bold;
+    letter-spacing: 0;
+    line-height: 1;
+    position: absolute;
+    background-color: $color-bg-light; // #d0e3ea の同等色（背景に合わせて枠線を切る）
+    
+    em {
+      font-style: normal;
+      color: $color-primary;
+      font-size: rem(26);
+    }
+  }
+
+  &__item:nth-child(odd) &__itemNo {
+    left: 0;
+    top: rem(-10);
+    padding-right: rem(5);
+  }
+
+  &__item:nth-child(even) &__itemNo {
+    right: 0;
+    bottom: rem(-10);
+    padding-left: rem(5);
+  }
+
+  &__noline {
+    display: block;
+    height: 1px;
+    background-color: $color-bg-light; // #d0e3ea の同等色
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &__itemText {
+    width: 100%;
+    font-family: $ff-serif;
+    font-size: rem(18);
+    line-height: 1.4;
+    padding: rem(10) 0;
+    border-top: 1px solid $color-text;
+    border-bottom: 1px solid $color-text;
+  }
+
+  &__item:nth-child(odd) &__itemText {
+    text-align: right;
+    padding-left: rem(10);
+  }
+
+  &__item:nth-child(even) &__itemText {
+    text-align: left;
+    padding-right: rem(10);
+  }
+
+  &__itemContent {
+    font-size: rem(16);
+    margin-top: rem(10);
+  }
+}

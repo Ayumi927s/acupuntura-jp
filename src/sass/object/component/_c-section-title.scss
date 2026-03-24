@@ -1,0 +1,53 @@
+@use 'global' as *;
+
+.c-section-title {
+  font-family: $ff-serif;
+  font-size: rem(28);
+  text-align: center;
+  margin-bottom: rem(30);
+
+  // data-en 属性がある場合、英語のサブタイトルを上に表示 (例: p-voice, Profile 等)
+  &[data-en]::before {
+    content: attr(data-en);
+    display: block;
+    color: #aea5a5;
+    font-size: rem(15);
+    margin-bottom: rem(10);
+    line-height: 1;
+  }
+
+  // クラスで指定するサブタイトル (例: p-cause 等)
+  &__sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-text;
+    font-size: rem(12);
+    letter-spacing: 0.1em;
+    position: relative;
+    margin-bottom: rem(10);
+    line-height: 1;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: calc((100% - rem(60)) / 2);
+      height: rem(1);
+      border-top: 1px solid $color-text;
+      border-bottom: 1px solid $color-text;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+}

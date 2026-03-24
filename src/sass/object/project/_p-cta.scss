@@ -1,0 +1,274 @@
+@use "global" as *;
+
+.p-cta {
+  background-color: #FFF;
+  margin: 0 auto;
+  width: calc(100% - rem(40)); // Effectively 20px margins on both sides without overflowing wrapper
+  max-width: rem(350);
+  padding-top: rem(17);
+  padding-bottom: rem(40);
+  padding-left: rem(7);
+  padding-right: rem(4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__subtitle {
+    color: #2ea9b7;
+    font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+    font-size: rem(18);
+    font-weight: $fw-bold;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: rem(20);
+  }
+
+  &__priceBox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: rem(30);
+  }
+
+  &__priceBoxInner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "before limited"
+      "discount main";
+    row-gap: rem(10);
+    column-gap: rem(6);
+    align-items: center;
+    width: 100%;
+  }
+
+  &__priceBeforeWrapper {
+    grid-area: before;
+    display: flex;
+    align-items: center;
+    gap: rem(5);
+    align-self: flex-end;
+    padding-bottom: rem(5); // Baseline adjustment
+  }
+
+  &__priceLabel {
+    border: 1px solid #444;
+    padding: rem(2);
+    font-size: rem(10);
+    color: #444;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: $fw-medium;
+  }
+
+  &__priceBefore {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__priceTime {
+    font-size: rem(15);
+    color: #444;
+    font-weight: $fw-bold;
+    line-height: 1;
+  }
+
+  &__priceStrike {
+    display: flex;
+    align-items: baseline;
+    color: #444;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -10%;
+      width: 120%;
+      height: 1px;
+      background-color: #444;
+      transform: rotate(-15deg);
+    }
+  }
+
+  &__priceAmount {
+    font-size: rem(18);
+    font-weight: $fw-medium;
+    line-height: 1;
+    font-family: 'Futura', sans-serif;
+  }
+
+  &__priceCurrency {
+    font-size: rem(14);
+    font-weight: $fw-bold;
+    line-height: 1;
+    margin-left: rem(2);
+  }
+
+  &__priceLimited {
+    grid-area: limited;
+    color: #efa309;
+    font-size: rem(18);
+    font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+    font-weight: $fw-bold;
+    letter-spacing: 0.08em;
+    text-align: center;
+    border-top: 1px solid #efa309;
+    border-bottom: 1px solid #efa309;
+    padding: rem(3) 0;
+    width: 100%;
+    align-self: flex-end;
+  }
+
+  &__priceDiscount {
+    grid-area: discount;
+    background-color: #2ea9b7;
+    color: $white;
+    clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+    width: clamp(rem(105), 28vw, rem(120));
+    height: rem(66);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(2);
+    padding-right: rem(10); // Adjust for arrow tip
+  }
+
+  &__discountNumber {
+    font-family: 'Futura', sans-serif;
+    font-size: clamp(rem(34), 9vw, rem(42));
+    font-weight: $fw-bold;
+    line-height: 1;
+  }
+
+  &__discountLabel {
+    font-size: rem(18);
+    line-height: 1;
+    font-weight: $fw-bold;
+    text-align: center;
+  }
+
+  &__priceMain {
+    grid-area: main;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: rem(6);
+    color: #efa309;
+    white-space: nowrap;
+  }
+
+  &__priceRAmount {
+    font-family: 'Futura', sans-serif;
+    font-size: clamp(rem(46), 12vw, rem(60));
+    font-weight: $fw-medium;
+    line-height: 1;
+  }
+
+  &__priceRCurrency {
+    font-size: clamp(rem(24), 6vw, rem(30));
+    font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+    font-weight: $fw-bold;
+    line-height: 1;
+  }
+
+  &__btnWrap {
+    display: flex;
+    flex-direction: column;
+    gap: rem(35); // Adjusted to make room for relative overlap badge
+    align-items: center;
+    width: 100%;
+  }
+
+  &__btnItem {
+    position: relative;
+    width: 100%;
+    max-width: rem(340);
+    margin-top: rem(15); // Offset to provide absolute badge breathing room
+  }
+
+  &__btnBadge {
+    position: absolute;
+    top: rem(-16);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #efa309;
+    color: $white;
+    font-size: rem(14);
+    font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+    font-weight: $fw-bold;
+    padding: rem(6) rem(15);
+    border-radius: rem(20);
+    z-index: 2;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: rem(-4);
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: rem(5) rem(5) 0 rem(5);
+      border-style: solid;
+      border-color: #efa309 transparent transparent transparent;
+    }
+  }
+}
+
+.c-btn-whatsapp,
+.c-btn-online {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(58);
+  border-radius: rem(40);
+  color: $white;
+  font-size: rem(18);
+  font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+  font-weight: $fw-bold;
+  text-decoration: none;
+  box-shadow: 0 rem(2) rem(2) rgba(0, 0, 0, 0.25);
+  position: relative;
+  width: 100%;
+  padding: 0 rem(20);
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: rem(20);
+    width: rem(20);
+    height: rem(20);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.c-btn-whatsapp {
+  background: linear-gradient(to top, #03983a 0%, #79cb9a 100%);
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: rem(20);
+    height: rem(20);
+    background-image: url('../img/icon-whatsapp.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: rem(8);
+  }
+
+  &::after {
+    background-image: url('../img/cta-link.png');
+  }
+}
+
+.c-btn-online {
+  background: linear-gradient(to top, #27acbb 0%, #79c1cb 100%);
+
+  &::after {
+    background-image: url('../img/cta-link-r.png');
+  }
+}

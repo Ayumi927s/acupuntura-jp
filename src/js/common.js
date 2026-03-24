@@ -262,4 +262,48 @@ jQuery(function () {
 
     return false;
   });
+
+  /* アコーディオン機能 */
+  jQuery('.js-accordion-trigger').on('click', function() {
+    jQuery(this).toggleClass('active');
+    jQuery(this).next('.js-accordion-content').slideToggle();
+
+    // テキスト切り替え処理 (data属性がある場合)
+    const openText = jQuery(this).data('open-text');
+    const closeText = jQuery(this).data('close-text');
+    if (openText && closeText) {
+      if (jQuery(this).hasClass('active')) {
+        jQuery(this).text(openText);
+      } else {
+        jQuery(this).text(closeText);
+      }
+    }
+  });
+
+  /* 理由セクションの傍線コントロール */
+  function updateUnderlines() {
+    jQuery(".p-reason__itemNo").each(function () {
+      const $box = jQuery(this);
+      const $line_l = $box.find(".p-reason__noline--l");
+      const $line_r = $box.find(".p-reason__noline--r");
+      const offsetLeft = $box.offset().left;
+      const boxWidth = $box.outerWidth();
+
+      if ($line_l.length) {
+        $line_l.css({
+          left: `-${offsetLeft}px`,
+          width: `${offsetLeft + boxWidth}px`,
+        });
+      }
+      if ($line_r.length) {
+        $line_r.css({
+          right: `-${offsetLeft}px`,
+          width: `${offsetLeft + boxWidth}px`,
+        });
+      }
+    });
+  }
+
+  jQuery(window).on("resize", updateUnderlines);
+  setTimeout(updateUnderlines, 100); // 初期評価のタイミングをDOM生成後に少し遅延
 });

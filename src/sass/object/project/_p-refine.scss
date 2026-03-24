@@ -1,0 +1,166 @@
+@use 'global' as *;
+
+.p-refine {
+  background-color: $white;
+  margin-top: rem(-20);
+  padding: rem(40) 0;
+
+  .c-section-title {
+    font-size: rem(22);
+
+    em {
+      font-style: normal;
+      font-size: rem(28);
+
+      &.u-color-primary {
+        font-size: rem(32);
+      }
+    }
+  }
+
+  &__titleHead {
+    display: block;
+    width: max-content;
+    background-color: $color-primary;
+    color: $white;
+    font-size: rem(20);
+    line-height: 1;
+    padding: rem(6) rem(10);
+    border-radius: rem(16);
+    margin: auto;
+  }
+
+  &__head {
+    font-family: $ff-serif;
+    background-color: #f0fdff;
+    text-align: center;
+    border-radius: 0 rem(40) 0 rem(40);
+    padding: rem(30) rem(5);
+    position: relative;
+
+    span {
+      display: block;
+      position: absolute;
+      background-color: #aea5a5;
+
+      &:nth-child(odd) {
+        width: 1px;
+        height: rem(40);
+      }
+
+      &:nth-child(even) {
+        width: rem(76);
+        height: 1px;
+      }
+
+      &:nth-child(1) { left: 0; top: rem(-10); }
+      &:nth-child(2) { left: rem(-10); top: 0; }
+      &:nth-child(3) { right: 0; bottom: rem(-10); }
+      &:nth-child(4) { right: rem(-10); bottom: 0; }
+    }
+  }
+
+  &__headText1 {
+    font-size: rem(20);
+  }
+
+  &__headText2 {
+    font-size: rem(22);
+  }
+
+  &__content {
+    letter-spacing: 0;
+
+    &::before {
+      content: "";
+      display: block;
+      width: rem(96);
+      height: rem(18);
+      background: url('../img/triangle.png') no-repeat;
+      background-size: contain;
+      margin: rem(40) auto rem(20);
+    }
+  }
+
+  &__img {
+    background-color: #f0fdff;
+    padding: rem(20) rem(23);
+  }
+
+  &__imgText {
+    background-color: $white;
+    font-family: $ff-serif;
+    font-size: rem(18);
+    font-weight: 600;
+    padding: 0 rem(12);
+    border: 1px solid $color-primary;
+    margin-top: rem(10);
+  }
+
+  &__circle {
+    font-family: $ff-serif;
+    aspect-ratio: 380 / 210;
+    background: url('../img/refine-circle.png') no-repeat;
+    background-size: contain;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    font-size: rem(26);
+    line-height: 1.4;
+    font-weight: 600;
+    margin: rem(20) auto 0;
+    position: relative;
+    z-index: 1;
+
+    em {
+      font-style: normal;
+      font-size: rem(36);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: rem(96);
+      height: rem(18);
+      background: url('../img/triangle.png') no-repeat;
+      background-size: contain;
+      margin: rem(22) auto 0;
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    font-size: rem(18);
+    margin-top: rem(24);
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 310 / 120;
+    background: url('../img/refine-arrow.png') no-repeat;
+    background-size: contain;
+    margin: rem(6) auto 0;
+
+    strong {
+      font-size: rem(22);
+      font-weight: $fw-bold;
+    }
+  }
+
+  &__lastText {
+    background-color: $color-primary;
+    color: $white;
+    font-size: rem(18);
+    padding: rem(15) 0;
+    border-radius: rem(60) 0 0 0;
+    margin-top: rem(14);
+
+    em {
+      font-style: normal;
+      font-size: rem(24);
+      font-weight: $fw-bold;
+    }
+  }
+}
