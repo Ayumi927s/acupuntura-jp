@@ -1,0 +1,84 @@
+@use 'global' as *;
+
+// Figma 403:99 — 選ばれる理由（Reson01-04）
+.p-select-reason {
+  background-color: $white;
+
+  &__inner {
+    box-sizing: border-box;
+    max-width: rem(390);
+    margin: 0 auto;
+    padding: rem(75) rem(20) rem(60);
+  }
+
+  &__title {
+    margin: 0 0 rem(32);
+    font-family: 'Noto Sans JP', $ff-sans;
+    font-weight: $fw-bold;
+    font-size: rem(24);
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+  }
+
+  &__card {
+    position: relative;
+    background-color: rgba($color-bg-light, 0.5);
+    padding: rem(45) rem(20) rem(28);
+
+    & + & {
+      margin-top: rem(40);
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: rem(-18);
+    left: 50%;
+    transform: translateX(-50%);
+    width: rem(151);
+    height: rem(36);
+    background-color: $color-accent;
+    display: grid;
+    place-content: center;
+
+    font-family: $ff-sans;
+    font-weight: $fw-medium;
+    font-size: rem(26);
+    line-height: 0.9;
+    color: $white;
+  }
+
+  &__cardTitle {
+    margin: 0 0 rem(18);
+    font-family: $ff-sans;
+    font-weight: $fw-bold;
+    font-size: rem(18);
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+  }
+
+  &__media {
+    width: rem(306);
+    height: rem(180);
+    background-color: #d9d9d9;
+    margin: 0 auto rem(18);
+  }
+
+  &__text {
+    font-family: $ff-sans;
+    font-weight: $fw-regular;
+    font-size: rem(16);
+    line-height: 1.5;
+    color: #333;
+
+    p {
+      margin: 0 0 rem(16);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

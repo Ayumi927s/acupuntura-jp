@@ -1,11 +1,12 @@
 @use 'global' as *;
 
 .p-how {
-  margin-bottom: rem(40);
+  background-color: $white;
+  padding: rem(16) 0 rem(60);
 
   .c-section-title {
     width: max-content;
-    background-color: $color-bg; 
+    background-color: $color-bg;
     font-size: rem(20);
     line-height: 1.6;
     padding: rem(12) rem(42);
@@ -34,6 +35,13 @@
     }
   }
 
+  // section-inner-w 相当（HTMLは p-how__box に寄せる）
+  &__box {
+    width: 90%;
+    max-width: var(--content-inner-width-w);
+    margin: 0 auto;
+  }
+
   &__item {
     border: 2px solid $color-primary;
     padding: 0 rem(13) rem(19);
@@ -44,7 +52,7 @@
       position: relative;
 
       &::before {
-        content: "";
+        content: '';
         display: block;
         width: rem(96);
         height: rem(18);
@@ -110,7 +118,7 @@
       }
 
       &::after {
-        content: "";
+        content: '';
         border-style: solid;
         border-width: rem(16) 0 rem(16) rem(4);
         border-top-color: transparent;
@@ -123,13 +131,26 @@
         z-index: 1;
       }
 
-      &:nth-child(1) { background-color: #d0e3ea; }
-      &:nth-child(2) { background-color: #b6ddeb; }
-      &:nth-child(3) { background-color: #6dbec7; color: $white; }
+      &:nth-child(1) {
+        background-color: #d0e3ea;
+      }
+      &:nth-child(2) {
+        background-color: #b6ddeb;
+      }
+      &:nth-child(3) {
+        background-color: #6dbec7;
+        color: $white;
+      }
 
-      &:nth-child(1)::after { border-left-color: #d0e3ea; }
-      &:nth-child(2)::after { border-left-color: #b6ddeb; }
-      &:nth-child(3)::after { border-left-color: #6dbec7; }
+      &:nth-child(1)::after {
+        border-left-color: #d0e3ea;
+      }
+      &:nth-child(2)::after {
+        border-left-color: #b6ddeb;
+      }
+      &:nth-child(3)::after {
+        border-left-color: #6dbec7;
+      }
     }
   }
 
@@ -161,5 +182,14 @@
       display: block;
       font-size: rem(10);
     }
+  }
+
+  // 既存マークアップ互換（p-how 内だけ）
+  .color {
+    color: $color-primary;
+  }
+
+  .line {
+    text-decoration: underline;
   }
 }

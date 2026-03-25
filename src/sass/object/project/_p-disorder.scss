@@ -1,0 +1,173 @@
+@use 'global' as *;
+
+// Figma 394:6 — 主な不調の原因（top 50px / inner 左右 20px）
+.p-disorder {
+  margin-top: rem(16);
+
+  &__inner {
+    box-sizing: border-box;
+    max-width: rem(390);
+    margin: 0 auto;
+    padding: rem(50) rem(20) rem(40);
+    background-color: $white;
+    border-radius: rem(10);
+  }
+
+  &__head {
+    position: relative;
+    margin: 0 auto;
+    padding: rem(10) rem(36);
+    max-width: rem(330);
+  }
+
+  &__corner {
+    position: absolute;
+    width: rem(10);
+    height: rem(10);
+    border-color: #999;
+    pointer-events: none;
+
+    &--tl {
+      top: 0;
+      left: 0;
+      border-left: 2px solid;
+      border-top: 2px solid;
+    }
+
+    &--tr {
+      top: 0;
+      right: 0;
+      border-right: 2px solid;
+      border-top: 2px solid;
+    }
+
+    &--bl {
+      bottom: 0;
+      left: 0;
+      border-left: 2px solid;
+      border-bottom: 2px solid;
+    }
+
+    &--br {
+      bottom: 0;
+      right: 0;
+      border-right: 2px solid;
+      border-bottom: 2px solid;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'Noto Sans JP', $ff-sans;
+    font-weight: $fw-regular;
+    font-size: rem(25);
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: center;
+    color: #333;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(20);
+    margin-top: rem(24);
+  }
+
+  &__item {
+    box-sizing: border-box;
+    min-height: rem(94);
+    padding: rem(5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7d7d7d;
+    border-radius: rem(3);
+    color: $white;
+    font-family: 'Noto Sans JP', $ff-sans;
+    font-weight: $fw-bold;
+    font-size: rem(23);
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  &__itemText {
+    margin: 0;
+  }
+}
+
+// Figma 396:14 — 不調へのつながり説明（top 41px / left 46px / right 39px）
+.p-disorder-flow {
+  &__inner {
+    box-sizing: border-box;
+    max-width: rem(390);
+    margin: 0 auto;
+    margin-bottom: rem(74);
+    padding-top: rem(41);
+    padding-left: rem(46);
+    padding-right: rem(39);
+    padding-bottom: rem(38);
+  }
+
+  &__lead,
+  &__text,
+  &__final {
+    margin: 0;
+    font-family: 'Noto Sans JP', $ff-sans;
+    font-weight: $fw-bold;
+    font-size: rem(20);
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+  }
+
+  &__arrow {
+    display: block;
+  }
+
+  &__chips {
+    margin-top: rem(12);
+  }
+
+  &__row {
+    display: flex;
+    justify-content: center;
+    gap: rem(8);
+
+    &--second {
+      margin-top: rem(8);
+    }
+  }
+
+  &__chip {
+    box-sizing: border-box;
+    min-width: rem(62);
+    height: rem(30);
+    padding: 0 rem(12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $white;
+    border-radius: rem(4);
+    background-color: #5c5c5c;
+    color: $white;
+    font-family: $ff-sans;
+    font-weight: $fw-bold;
+    font-size: rem(16);
+    line-height: 1;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  &__text {
+    margin-top: rem(24);
+
+    &--spacer {
+      margin-top: rem(36);
+    }
+  }
+
+  &__final {
+    margin-top: rem(36);
+  }
+}

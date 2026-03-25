@@ -1,0 +1,83 @@
+@use 'global' as *;
+
+// Figma 403:98 — 鍼灸治療で全身のバランスが整うメカニズム
+// top:94px / inner:20px / bottom:60px
+.p-mechanism {
+  background-color: $color-bg-light;
+
+  &__inner {
+    box-sizing: border-box;
+    max-width: rem(390);
+    margin: 0 auto;
+    padding: rem(94) rem(20) rem(60);
+  }
+
+  &__title {
+    margin: 0 0 rem(28);
+    font-family: 'Noto Sans JP', $ff-sans;
+    font-weight: $fw-bold;
+    font-size: rem(21);
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+  }
+
+  &__card {
+    background-color: $white;
+    padding: rem(24) 0 rem(28);
+
+    & + & {
+      margin-top: rem(50);
+    }
+  }
+
+  &__cardLead {
+    margin: 0 0 rem(18);
+    font-family: $ff-sans;
+    font-weight: $fw-medium;
+    font-size: rem(18);
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: $color-primary-dark;
+  }
+
+  &__media {
+    width: rem(314);
+    height: rem(200);
+    margin: 0 auto;
+    -webkit-mask-image: url('../img/mechanism-mask.svg');
+    mask-image: url('../img/mechanism-mask.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    margin-top: rem(12);
+    padding: 0 rem(18);
+    font-family: $ff-sans;
+    font-weight: $fw-regular;
+    font-size: rem(16);
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    color: $color-text;
+
+    p {
+      margin: 0 0 rem(14);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

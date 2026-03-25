@@ -1,7 +1,7 @@
-@use "global" as *;
+@use 'global' as *;
 
 .p-cta {
-  background-color: #FFF;
+  background-color: #fff;
   margin: 0 auto;
   width: calc(100% - rem(40)); // Effectively 20px margins on both sides without overflowing wrapper
   max-width: rem(350);
@@ -15,7 +15,7 @@
 
   &__subtitle {
     color: #2ea9b7;
-    font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+    font-family: 'Yu Gothic', '游ゴシック', 'YuGothic', sans-serif;
     font-size: rem(18);
     font-weight: $fw-bold;
     text-align: center;
@@ -34,8 +34,8 @@
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-areas:
-      "before limited"
-      "discount main";
+      'before limited'
+      'discount main';
     row-gap: rem(10);
     column-gap: rem(6);
     align-items: center;
@@ -110,7 +110,7 @@
     grid-area: limited;
     color: #efa309;
     font-size: rem(18);
-    font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+    font-family: 'Yu Gothic', '游ゴシック', 'YuGothic', sans-serif;
     font-weight: $fw-bold;
     letter-spacing: 0.08em;
     text-align: center;
@@ -168,7 +168,7 @@
 
   &__priceRCurrency {
     font-size: clamp(rem(24), 6vw, rem(30));
-    font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+    font-family: 'Yu Gothic', '游ゴシック', 'YuGothic', sans-serif;
     font-weight: $fw-bold;
     line-height: 1;
   }
@@ -196,7 +196,7 @@
     background-color: #efa309;
     color: $white;
     font-size: rem(14);
-    font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+    font-family: 'Yu Gothic', '游ゴシック', 'YuGothic', sans-serif;
     font-weight: $fw-bold;
     padding: rem(6) rem(15);
     border-radius: rem(20);
@@ -214,6 +214,11 @@
       border-color: #efa309 transparent transparent transparent;
     }
   }
+
+  &--second {
+    margin-top: rem(60);
+    margin-bottom: rem(57);
+  }
 }
 
 .c-btn-whatsapp,
@@ -225,7 +230,7 @@
   border-radius: rem(40);
   color: $white;
   font-size: rem(18);
-  font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+  font-family: 'Yu Gothic', '游ゴシック', 'YuGothic', sans-serif;
   font-weight: $fw-bold;
   text-decoration: none;
   box-shadow: 0 rem(2) rem(2) rgba(0, 0, 0, 0.25);
