@@ -8,7 +8,7 @@
     z-index: 1;
 
     &::before {
-      content: "";
+      content: '';
       width: 100vw;
       height: 1px;
       background-color: $color-primary;
@@ -42,7 +42,7 @@
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       width: rem(12);
       height: rem(34);
       position: absolute;
@@ -93,7 +93,7 @@
     line-height: 1;
     position: absolute;
     background-color: $color-bg-light; // #d0e3ea の同等色（背景に合わせて枠線を切る）
-    
+
     em {
       font-style: normal;
       color: $color-primary;

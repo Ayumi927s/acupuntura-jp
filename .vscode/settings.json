@@ -10,23 +10,23 @@
   },
   // "[pug]": {
   "[jade]": {
-    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>?",
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>?"
   },
   "[css]": {},
   "[scss]": {
-    "editor.wordSeparators": "`~!$%^&*()=+[{]}|;:'\",.<>/?",
+    "editor.wordSeparators": "`~!$%^&*()=+[{]}|;:'\",.<>/?"
   },
   "[javascript]": {
-    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>?",
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>?"
   },
   "[json]": {},
   "[php]": {
-    "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+    "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?"
   },
   "phpcbf.onsave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "never"
-  },
+  }
   // "files.exclude": {
   //   "**/.git": false // .gitフォルダの非表示を解除 (.git/info/exclude に自分だけのこのワークスペースでのgitignoreを作成可能)
   // }

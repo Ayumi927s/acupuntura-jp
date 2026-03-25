@@ -280,6 +280,34 @@ jQuery(function () {
     }
   });
 
+  /**
+   * p-cause: 1つだけ開くアコーディオン（Figma LP）
+   */
+  jQuery(document).on('click', '.js-cause-accordion-trigger', function (e) {
+    e.preventDefault();
+    const $t = jQuery(this);
+    const $content = $t.next('.js-cause-accordion-content');
+    const $list = $t.closest('.p-cause__list');
+    const wasActive = $t.hasClass('is-active');
+
+    $list.find('.js-cause-accordion-trigger').removeClass('is-active');
+    $list.find('.js-cause-accordion-content').slideUp(200);
+
+    if (!wasActive) {
+      $t.addClass('is-active');
+      $content.slideDown(200);
+    }
+  });
+
+  jQuery(document).on('keydown', '.js-cause-accordion-trigger', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      jQuery(this).trigger('click');
+    }
+  });
+
+  jQuery('.p-cause .p-cause__item:first-child .js-cause-accordion-content').show();
+
   /* 理由セクションの傍線コントロール */
   function updateUnderlines() {
     jQuery(".p-reason__itemNo").each(function () {
