@@ -2,21 +2,21 @@
 
 .p-how {
   background-color: $white;
-  padding: rem(16) 0 rem(60);
+  padding: rem(39) 0 rem(60);
 
   .c-section-title {
     width: max-content;
-    background-color: $color-bg;
+    background-color: $color-bg-light;
     font-size: rem(20);
     line-height: 1.6;
-    padding: rem(12) rem(42);
-    margin: 0 auto rem(12);
+    padding: rem(8) rem(42);
+    margin: 0 auto rem(16);
 
     em {
       display: inline-block;
       background-color: $color-primary;
       color: $white;
-      padding: 0 rem(6);
+      padding: 0 rem(9);
       font-style: normal;
     }
   }
@@ -24,13 +24,13 @@
   &__text {
     text-align: center;
     font-family: $ff-serif;
-    margin-bottom: rem(48);
+    margin-bottom: rem(33);
 
     em {
       font-style: normal;
       display: inline-block;
       font-size: rem(22);
-      margin: rem(6) 0;
+      margin: rem(8) 0;
       color: $color-primary;
     }
   }

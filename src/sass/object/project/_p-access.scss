@@ -29,13 +29,11 @@
 }
 
 .p-access__map {
-  background-color: #d9d9d9;
   width: 100%;
-  aspect-ratio: 330 / 231;
+  aspect-ratio: 330 / 230;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: rem(20);
 }
 
 .p-access__mapText {
@@ -47,9 +45,9 @@
 .p-access__address {
   color: #000;
   font-size: rem(15);
-  font-family: 'YuMincho', '游明朝', serif;
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: rem(60);
+  margin-left: rem(22);
 }
 
 .p-profile__head {
@@ -80,11 +78,9 @@
 .p-profile__name {
   color: #444;
   font-size: rem(22);
-  font-family: 'YuMincho', '游明朝', serif;
   font-weight: $fw-medium;
-  letter-spacing: 0.12em;
-  margin-bottom: rem(5);
   text-align: center;
+  margin-top: rem(12);
 }
 
 .p-profile__nameEn {
@@ -92,8 +88,7 @@
   font-size: rem(14);
   font-family: 'Noto Serif JP', serif;
   font-weight: $fw-medium;
-  letter-spacing: 0.04em;
-  margin-bottom: rem(41);
+  margin-bottom: rem(33);
   text-align: center;
 }
 
@@ -105,10 +100,7 @@
 .p-profile__licenseTitle {
   color: #444;
   font-size: rem(14);
-  font-family: 'YuMincho', '游明朝', serif;
   font-weight: $fw-medium;
-  letter-spacing: 0.2em;
-  padding: rem(4) 0;
   border-top: 1px solid #d0e3ea;
   border-bottom: 1px solid #d0e3ea;
   margin-bottom: rem(10);
@@ -124,10 +116,9 @@
   font-family: 'Yu Gothic', '游ゴシック', 'YuGothic', sans-serif;
   font-weight: $fw-medium;
   line-height: 1.6;
-  letter-spacing: 0.1em;
   display: flex;
   flex-direction: column;
-  gap: rem(10);
+  gap: rem(5);
   white-space: nowrap;
 }
 

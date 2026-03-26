@@ -9,11 +9,11 @@
     box-sizing: border-box;
     max-width: rem($layout-width-canvas);
     margin: 0 auto;
-    padding: rem(94) rem(20) rem(60);
+    padding: rem(84) rem(20) rem(60);
   }
 
   &__title {
-    margin: 0 0 rem(28);
+    margin-bottom: rem(45);
     font-family: 'Noto Sans JP', $ff-sans;
     font-weight: $fw-bold;
     font-size: rem(21);
@@ -24,7 +24,7 @@
 
   &__card {
     background-color: $white;
-    padding: rem(24) 0 rem(28);
+    padding: rem(44) 0 rem(49);
 
     & + & {
       margin-top: rem(50);
@@ -32,7 +32,7 @@
   }
 
   &__cardLead {
-    margin: 0 0 rem(18);
+    margin-bottom: rem(29);
     font-family: $ff-sans;
     font-weight: $fw-medium;
     font-size: rem(18);
@@ -71,13 +71,5 @@
     line-height: 1.6;
     letter-spacing: 0.04em;
     color: $color-text;
-
-    p {
-      margin: 0 0 rem(14);
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
   }
 }

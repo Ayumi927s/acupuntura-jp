@@ -12,8 +12,8 @@ $p-cause-border: #aea5a5;
   &__inner {
     background-color: $p-cause-bg;
     max-width: rem($layout-width-canvas);
-    margin: 0 auto;
-    padding: rem(37) rem(10) rem(30);
+    padding: rem(28) rem(10) rem(37);
+    margin-inline: rem(20);
   }
 
   &__header {
@@ -32,13 +32,32 @@ $p-cause-border: #aea5a5;
     width: 100%;
   }
 
+  // 左右の短い二重線（参考: 擬似要素で上下1px + #444）
   &__line {
-    display: block;
     flex: 1;
-    height: rem(2);
     max-width: rem(135);
-    background-color: rgba(255, 255, 255, 0.85);
-    border: none;
+    min-width: 0;
+    height: rem(5);
+    position: relative;
+    align-self: center;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #444;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
   }
 
   &__trouble {
@@ -64,16 +83,10 @@ $p-cause-border: #aea5a5;
     color: $white;
   }
 
+  // タイトル下の全幅二重線（参考: border-bottom + double）
   &__border {
     width: 100%;
-    height: rem(2);
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.65) 15%,
-      rgba(255, 255, 255, 0.65) 85%,
-      transparent 100%
-    );
+    border-bottom: 3px double #444;
   }
 
   &__list {
@@ -81,7 +94,7 @@ $p-cause-border: #aea5a5;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: rem(16);
+    gap: rem(12);
     list-style: none;
   }
 
@@ -98,12 +111,9 @@ $p-cause-border: #aea5a5;
     align-items: center;
     justify-content: space-between;
     min-height: rem(50);
-    margin: 0;
-    padding: rem(15);
-    box-sizing: border-box;
+    padding: rem(15) rem(16);
     width: 100%;
     background-color: transparent;
-    border: none;
     border-bottom: 1px solid transparent;
     font-family: $ff-sans;
     font-weight: $fw-medium;
@@ -157,6 +167,84 @@ $p-cause-border: #aea5a5;
     color: $color-text;
   }
 
+  // Figma 417:2 — 「放っておくと」ブロック（へこみ背景 + コピー）
+  &__neglect {
+    position: relative;
+    width: 100%;
+    max-width: rem($layout-width-canvas);
+    margin-left: auto;
+    margin-right: auto;
+    min-height: rem(249);
+    background: url('../img/cause-neglect-bg.svg') no-repeat center / 100% 100%;
+    color: $white;
+  }
+
+  &__neglectInner {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: rem(20) rem(45) rem(28);
+  }
+
+  &__neglectBadge {
+    margin-top: rem(-35);
+    padding: rem(8) rem(10);
+    width: 100%;
+    max-width: rem(140);
+    box-sizing: border-box;
+    background-color: #444;
+    color: $white;
+    font-family: $ff-sans;
+    font-weight: $fw-medium;
+    font-size: rem(20);
+    line-height: 1;
+    text-align: center;
+  }
+
+  &__neglectArrow {
+    width: rem(12);
+    height: rem(40);
+    margin: 0;
+    flex-shrink: 0;
+    background: url('../img/cause-neglect-arrow.svg') no-repeat center / contain;
+  }
+
+  &__neglectText {
+    margin-top: rem(16);
+    font-family: $ff-sans;
+    font-weight: $fw-medium;
+    font-size: rem(24);
+    line-height: 1;
+    text-align: center;
+    color: $white;
+  }
+
+  &__neglectText--emph {
+    font-weight: $fw-bold;
+    font-size: rem(27);
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-bottom: rem(6);
+
+    // 二重下線（各1px・#444）＋ 線の間 1px gap（合計3px）
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: linear-gradient(to bottom, #444 0, #444 1px, transparent 1px, transparent 2px, #444 2px, #444 3px);
+    }
+  }
+
   // Figma 343:508 — 紹介コピー（上下50px / 左右55px）
   &__bottom {
     color: #333;
@@ -169,7 +257,7 @@ $p-cause-border: #aea5a5;
     box-sizing: border-box;
     max-width: rem($layout-width-canvas);
     margin: 0 auto;
-    padding-block: rem(50);
+    padding-block: rem(41);
     padding-inline: rem(55) rem(53);
   }
 
