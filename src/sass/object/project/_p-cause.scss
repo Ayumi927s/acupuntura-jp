@@ -11,7 +11,7 @@ $p-cause-border: #aea5a5;
 
   &__inner {
     background-color: $p-cause-bg;
-    max-width: rem(390);
+    max-width: rem($layout-width-canvas);
     margin: 0 auto;
     padding: rem(37) rem(10) rem(30);
   }
@@ -33,10 +33,12 @@ $p-cause-border: #aea5a5;
   }
 
   &__line {
+    display: block;
     flex: 1;
     height: rem(2);
     max-width: rem(135);
     background-color: rgba(255, 255, 255, 0.85);
+    border: none;
   }
 
   &__trouble {
@@ -165,7 +167,7 @@ $p-cause-border: #aea5a5;
 
   &__bottomInner {
     box-sizing: border-box;
-    max-width: rem(390);
+    max-width: rem($layout-width-canvas);
     margin: 0 auto;
     padding-block: rem(50);
     padding-inline: rem(55) rem(53);

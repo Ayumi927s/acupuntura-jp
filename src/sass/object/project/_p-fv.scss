@@ -7,8 +7,8 @@
   margin-bottom: rem(89);
 
   &__body {
-    background-color: #FFF;
-    padding: rem(30) rem(20) rem(20);
+    background-color: #fff;
+    padding: rem(5) rem(2) rem(0) rem(14);
     font-family: 'Noto Serif JP', serif;
 
     .l-container {
@@ -20,7 +20,7 @@
 
   &__imageArea {
     background: url('../img/FV-img.png') no-repeat center center / cover;
-    min-height: rem(380);
+    min-height: rem(323);
     display: flex;
     align-items: flex-end;
 
@@ -37,7 +37,19 @@
     color: #444;
     font-weight: $fw-bold;
     letter-spacing: 0.048em;
-    margin-bottom: rem(15);
+    margin-bottom: rem(4);
+
+    // タイトル下のあしらい線（fv-title-line.png は 638×24）
+    // 以前 height: 6px 固定 + contain だと「高さ6pxに収める」縮小が優先され、
+    // 横638に対して高さ比 6/24 の倍率(0.25)で全体が縮み、表示幅は約159px（314の半分）になっていた。
+    &::after {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: rem(314);
+      aspect-ratio: 638 / 24;
+      background: url('../img/fv-title-line.png') no-repeat center / contain;
+    }
   }
 
   &__topTitleSmall {
@@ -48,16 +60,10 @@
     font-size: rem(26);
   }
 
-  &__topTitleLine {
-    margin-top: rem(5);
-    width: rem(314);
-    height: rem(6);
-    object-fit: contain;
-  }
-
   &__labels {
-    background-color: #27ACBB;
-    padding: rem(10);
+    background-color: #27acbb;
+    padding-block: rem(12) rem(7);
+    padding-inline: rem(10) rem(0);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -67,7 +73,7 @@
   &__labelsRow {
     display: flex;
     flex-wrap: wrap;
-    gap: rem(8);
+    gap: rem(6);
     justify-content: flex-start;
     align-items: center;
   }
@@ -79,7 +85,7 @@
     font-size: rem(14.5);
     font-weight: $fw-bold;
     letter-spacing: 0.04em;
-    padding: rem(4) rem(13);
+    padding: rem(5) rem(12);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,7 +98,6 @@
     font-size: rem(20);
     font-weight: $fw-bold;
     letter-spacing: 0.04em;
-    margin-left: rem(5);
     display: flex;
     align-items: center;
   }
@@ -107,7 +112,7 @@
     height: rem(35);
     font-size: rem(20);
     font-weight: $fw-bold;
-    margin-bottom: rem(15);
+    margin-bottom: rem(1);
     letter-spacing: 0.04em;
   }
 
@@ -139,7 +144,7 @@
   }
 
   &__point {
-    background-color: #FFF;
+    background-color: #fff;
     // border: rem(1) solid #2ea9b7;
     border-radius: 50%;
     width: rem(120);
@@ -149,7 +154,7 @@
     align-items: center;
     justify-content: center;
     color: #2ea9b7;
-    font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+    font-family: 'Yu Gothic', '游ゴシック', 'YuGothic', sans-serif;
     font-size: rem(16);
     line-height: 1.4;
     font-weight: $fw-bold;

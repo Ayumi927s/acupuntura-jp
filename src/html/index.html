@@ -66,8 +66,6 @@
                   <span class="p-fv__topTitleSmall">日本の</span><span class="p-fv__topTitleLarge">鍼灸師</span
                   ><span class="p-fv__topTitleSmall">が行う鍼灸治療</span>
                 </div>
-                <!-- あしらい線画像が入ります。必要に応じて画像パスを調整してください -->
-                <img src="../img/fv-title-line.png" alt="" class="p-fv__topTitleLine" />
               </div>
               <div class="p-fv__lead">長年悩まされている</div>
               <h2 class="p-fv__title">
@@ -214,9 +212,26 @@
                   class="c-btn-detail js-accordion-trigger"
                   data-open-text="閉じる"
                   data-close-text="詳細を見る"
+                  aria-expanded="false"
                 >
                   詳細を見る
                 </button>
+                <div class="p-profile__detail js-accordion-content" style="display: none">
+                  <ul class="p-profile__historyList">
+                    <li class="p-profile__historyItem">
+                      2011年、森ノ宮医療大学 鍼灸学科を卒業。<br />
+                      卒業後は、大阪で84年続く老舗鍼灸院の家系に生まれた鍼灸医・米山榮氏に師事し、内科・神経内科を専門とする「米山クリニック」にて臨床研修を修了。西洋医学の視点と東洋医学の統合的アプローチを学ぶ。日本国内での経験を積んだ後、豪華客船にて鍼灸師として勤務。世界80カ国以上を巡り、様々な国籍・体質の乗客へ施術を行うことで、より柔軟で国際的なアプローチを習得。
+                    </li>
+                    <li class="p-profile__historyItem">
+                      その後ニュージーランドへ移住。<br />
+                      ・Napier Acupuncture Clinicにて勤務<br />
+                      ・Nelson Shinkyu Acupuncture Clinic を開業し、現地で5年以上にわたり多くの患者を治療。
+                    </li>
+                    <li class="p-profile__historyItem">
+                      2025年、メキシコ・ポランコにて「Zen Japon Polanco Acupuncture y Masaje」を開院。日本の繊細な技術と、国際的な経験に基づいた施術を提供しています。
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -396,7 +411,7 @@
             </div>
           </div>
           <div class="p-about__cycle">
-            <img src="./assets/img/about-cycle.png" alt="悪循環から好循環へ" width="390" height="299" />
+            <img src="./assets/img/about-cycle.png" alt="悪循環から好循環へ" width="430" height="329" />
           </div>
           <div class="p-about__inner">
             <div class="p-about__connection">
@@ -411,12 +426,12 @@
               一部の違和感が全身の疲れやストレス、<br />
               不眠の原因になります。
             </p>
-          </div>
-          <div class="p-about__loopBanner">
-            <p class="p-about__loopText">
-              <span>こうした</span>
-              <strong>負のループを断ち切るには</strong>
-            </p>
+            <div class="p-about__loopBanner">
+              <p class="p-about__loopText">
+                <span>こうした</span>
+                <strong>負のループを断ち切るには</strong>
+              </p>
+            </div>
           </div>
           <div class="p-about__inner">
             <div class="p-about__balance">
@@ -887,6 +902,6 @@
 
     <!-- Scripts -->
     <script src="./assets/js/core/jquery.min.js"></script>
-    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

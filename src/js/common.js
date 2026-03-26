@@ -265,18 +265,19 @@ jQuery(function () {
 
   /* アコーディオン機能 */
   jQuery('.js-accordion-trigger').on('click', function() {
-    jQuery(this).toggleClass('active');
-    jQuery(this).next('.js-accordion-content').slideToggle();
+    const $btn = jQuery(this);
+    $btn.toggleClass('active');
+    $btn.next('.js-accordion-content').slideToggle(250);
+
+    // aria-expanded 更新
+    const isOpen = $btn.hasClass('active');
+    $btn.attr('aria-expanded', isOpen ? 'true' : 'false');
 
     // テキスト切り替え処理 (data属性がある場合)
-    const openText = jQuery(this).data('open-text');
-    const closeText = jQuery(this).data('close-text');
+    const openText = $btn.data('open-text');
+    const closeText = $btn.data('close-text');
     if (openText && closeText) {
-      if (jQuery(this).hasClass('active')) {
-        jQuery(this).text(openText);
-      } else {
-        jQuery(this).text(closeText);
-      }
+      $btn.text(isOpen ? openText : closeText);
     }
   });
 

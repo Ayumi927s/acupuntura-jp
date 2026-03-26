@@ -7,7 +7,7 @@
 
   &__inner {
     box-sizing: border-box;
-    max-width: rem(390);
+    max-width: rem($layout-width-canvas);
     margin: 0 auto;
     padding: rem(94) rem(20) rem(60);
   }

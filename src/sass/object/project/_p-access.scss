@@ -1,7 +1,7 @@
 @use 'global' as *;
 
 .p-access {
-  background-color: #FFF;
+  background-color: #fff;
   width: 100%;
   border-bottom-right-radius: rem(60);
   overflow: hidden; // 念のため
@@ -17,12 +17,12 @@
 .p-access__head {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: rem(20);
 }
 
 .p-access__title {
   color: #444;
-  font-size: rem(24);
+  font-size: rem(28);
+  padding-left: 11px;
   font-family: 'YuMincho', '游明朝', serif;
   font-weight: $fw-medium;
   letter-spacing: 0.06em;
@@ -109,8 +109,8 @@
   font-weight: $fw-medium;
   letter-spacing: 0.2em;
   padding: rem(4) 0;
-  border-top: 1px solid #D0E3EA;
-  border-bottom: 1px solid #D0E3EA;
+  border-top: 1px solid #d0e3ea;
+  border-bottom: 1px solid #d0e3ea;
   margin-bottom: rem(10);
   text-align: center;
 }
@@ -121,7 +121,7 @@
   padding: 0;
   color: #444;
   font-size: rem(9.5);
-  font-family: "Yu Gothic", "游ゴシック", "YuGothic", sans-serif;
+  font-family: 'Yu Gothic', '游ゴシック', 'YuGothic', sans-serif;
   font-weight: $fw-medium;
   line-height: 1.6;
   letter-spacing: 0.1em;
@@ -131,77 +131,92 @@
   white-space: nowrap;
 }
 
+// Figma 343:720 — プロフィール詳細（展開状態）
 .p-profile__btnWrap {
   margin-top: rem(30);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: rem(30);
 }
 
 .c-btn-detail {
-  background-color: #dae9ed;
-  width: rem(237);
-  height: rem(40);
-  border-radius: rem(20);
-  box-shadow: 0 rem(2) rem(2) rgba(0, 0, 0, 0.25);
+  // Figma: width 200px / py-13 / border-radius 80px / #d0e3ea / shadow 4px
+  background-color: #d0e3ea;
+  width: rem(200);
+  padding: rem(13) rem(30) rem(13) rem(50);
+  border-radius: rem(80);
+  box-shadow: 0 rem(4) rem(4) rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #444;
-  font-size: rem(15);
+  font-size: rem(14);
   font-family: $ff-sans;
   font-weight: $fw-medium;
+  line-height: 1;
   text-decoration: none;
   position: relative;
   cursor: pointer;
   border: none;
   appearance: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
+// 右端の▼三角アイコン（擬似要素）
 .c-btn-detail::after {
   content: '';
   position: absolute;
-  right: rem(20);
+  right: rem(18);
   top: 50%;
   transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: rem(5) solid transparent;
-  border-right: rem(5) solid transparent;
-  border-top: rem(6) solid #444;
-  transition: transform 0.3s;
+  width: rem(10);
+  height: rem(6);
+  background: url('../img/icon-triangle-down.svg') no-repeat center / contain;
+  transition: transform 0.3s ease;
 }
 
+// 開いている状態：▼を反転（▲）
 .c-btn-detail.active::after {
   transform: translateY(-50%) rotate(180deg);
 }
 
-.p-profile__accordionContent {
-  display: none;
-  margin-top: rem(30);
+// 展開コンテンツ
+.p-profile__detail {
+  width: 100%;
+}
+
+.p-profile__historyList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
 }
 
 .p-profile__historyItem {
   font-family: $ff-sans;
-  font-size: rem(12);
-  line-height: 1.8;
+  font-weight: $fw-medium;
+  font-size: rem(14);
+  line-height: 1.6;
   color: #444;
   position: relative;
   padding-left: rem(20);
-  margin-bottom: rem(20);
-}
 
-.p-profile__historyItem::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: rem(6);
-  width: 0;
-  height: 0;
-  border-top: rem(5) solid transparent;
-  border-bottom: rem(5) solid transparent;
-  border-left: rem(7) solid #D0E3EA;
-}
-
-.p-profile__historyItem:last-child {
-  margin-bottom: 0;
+  // ▶ 三角マーカー（Figma icon-bullet-arrow.svg）
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: rem(3);
+    width: rem(10);
+    height: rem(17);
+    background: url('../img/icon-bullet-arrow.svg') no-repeat center / contain;
+  }
 }
