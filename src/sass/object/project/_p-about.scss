@@ -4,9 +4,7 @@
 .p-about {
   position: relative;
   z-index: 2;
-  isolation: isolate;
   background-color: $white;
-  // margin-top 負の .p-about__header 用に上方向へはみ出しを許可（hidden だと「ところで」が切れて disorder-flow が上に見える）
   overflow: visible;
   padding-bottom: rem(17);
 
