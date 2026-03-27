@@ -136,11 +136,11 @@ $p-cause-border: #aea5a5;
       transition: transform 0.25s ease;
     }
 
-    &.is-active {
+    &.active {
       border-bottom-color: $p-cause-border;
     }
 
-    &.is-active::after {
+    &.active::after {
       transform: rotate(180deg);
     }
 

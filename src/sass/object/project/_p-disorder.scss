@@ -85,6 +85,10 @@
 
 // Figma 396:14 — 不調へのつながり説明（top 41px / left 46px / right 39px）
 .p-disorder-flow {
+  position: relative;
+  z-index: 0;
+  margin-bottom: rem(48);
+
   &__inner {
     box-sizing: border-box;
     max-width: rem($layout-width-canvas);

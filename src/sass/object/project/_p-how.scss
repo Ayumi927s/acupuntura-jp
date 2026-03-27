@@ -37,7 +37,7 @@
 
   // section-inner-w 相当（HTMLは p-how__box に寄せる）
   &__box {
-    width: 90%;
+    width: 100%;
     max-width: var(--content-inner-width-w);
     margin: 0 auto;
   }
@@ -68,7 +68,7 @@
   }
 
   &__title {
-    width: rem(260);
+    width: rem(280);
     background-color: $color-primary;
     font-family: $ff-serif;
     color: $white;
@@ -77,7 +77,7 @@
     text-align: center;
     border-radius: rem(20);
     padding: rem(10);
-    margin: rem(-20) auto rem(17);
+    margin: rem(-17) auto rem(9);
   }
 
   &__item--1 {
@@ -97,7 +97,7 @@
   }
 
   &__visit {
-    padding-top: rem(16);
+    padding-top: rem(10);
   }
 
   &__visitHead {
@@ -169,7 +169,7 @@
       width: calc(100% / 3);
       font-size: rem(12);
       border: 1px solid #959393;
-      padding: rem(6) rem(8);
+      padding: rem(4) rem(8);
     }
 
     em {

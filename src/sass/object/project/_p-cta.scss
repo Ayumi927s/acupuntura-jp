@@ -27,7 +27,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: rem(20);
+    margin-bottom: rem(16);
   }
 
   &__priceBoxInner {
@@ -113,12 +113,13 @@
     font-family: 'Yu Gothic', '游ゴシック', 'YuGothic', sans-serif;
     font-weight: $fw-bold;
     letter-spacing: 0.08em;
+    line-height: 1.2;
     text-align: center;
     border-top: 1px solid #efa309;
     border-bottom: 1px solid #efa309;
     padding: rem(3) 0;
     width: 100%;
-    align-self: flex-end;
+    align-self: flex-start;
   }
 
   &__priceDiscount {
@@ -176,7 +177,7 @@
   &__btnWrap {
     display: flex;
     flex-direction: column;
-    gap: rem(15);
+    gap: rem(20);
     align-items: center;
     width: 100%;
   }
@@ -252,10 +253,13 @@
 
 .c-btn-whatsapp {
   background: linear-gradient(to top, #03983a 0%, #79cb9a 100%);
+  // 右端の ::after（矢印）とテキストが重ならないよう余白を確保
+  padding-right: rem(48);
 
   &::before {
     content: '';
     display: inline-block;
+    flex-shrink: 0;
     width: rem(20);
     height: rem(20);
     background-image: url('../img/icon-whatsapp.png');
@@ -267,6 +271,13 @@
 
   &::after {
     background-image: url('../img/cta-link.png');
+  }
+
+  &__text {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    font-size: rem(17);
   }
 }
 

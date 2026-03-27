@@ -2,8 +2,12 @@
 
 // Figma 398:86 — 日本の鍼灸について（inner 20px）
 .p-about {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
   background-color: $white;
-  overflow: hidden;
+  // margin-top 負の .p-about__header 用に上方向へはみ出しを許可（hidden だと「ところで」が切れて disorder-flow が上に見える）
+  overflow: visible;
   padding-bottom: rem(17);
 
   &__inner {
@@ -19,7 +23,6 @@
   &__header {
     display: flex;
     justify-content: center;
-    margin-top: rem(-26);
   }
 
   &__headerText {
@@ -29,6 +32,8 @@
     min-width: rem(162);
     min-height: rem(52);
     padding: 0 rem(24);
+    margin-top: rem(-26);
+
     background-color: $color-primary;
     color: $white;
     font-family: $ff-sans;
@@ -36,7 +41,7 @@
     font-size: rem(29);
     line-height: 1.5;
     position: relative;
-    z-index: 2;
+    z-index: 3;
   }
 
   &__question {
@@ -231,12 +236,14 @@
     color: #333;
   }
 
+  // Figma 403:97 付近 — マーカー風（文字下半分に帯・テキストより背面）
   &__bgTitleUnderline {
-    display: inline-block;
-    text-decoration: underline;
-    text-decoration-thickness: 0.4em;
-    text-underline-offset: -0.2em;
-    text-decoration-color: #ffdb93;
+    display: inline;
+    padding: 0 0.02em;
+    color: #333;
+    background-image: linear-gradient(to bottom, transparent 0, transparent 54%, #ffd680 54%, #ffd680 100%);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   &__fukushinTitle {
