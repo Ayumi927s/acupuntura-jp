@@ -60,7 +60,8 @@
   }
 
   &__media {
-    width: rem(306);
+    max-width: rem(306);
+    width: 100%;
     height: rem(180);
     background-color: #d9d9d9;
     margin: 0 auto rem(11);

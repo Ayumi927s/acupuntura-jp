@@ -1,7 +1,6 @@
 @use 'global' as *;
 
 .p-how {
-  background-color: $white;
   padding: rem(39) 0 rem(60);
 
   .c-section-title {
@@ -17,6 +16,7 @@
       background-color: $color-primary;
       color: $white;
       padding: 0 rem(9);
+      margin-inline: rem(3);
       font-style: normal;
     }
   }
@@ -46,6 +46,7 @@
     border: 2px solid $color-primary;
     padding: 0 rem(13) rem(19);
     margin: 0 rem(-2);
+    background-color: $white;
 
     & + & {
       margin-top: rem(90);

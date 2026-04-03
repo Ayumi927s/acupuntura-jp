@@ -33,7 +33,12 @@
   // CTAリンク内の調整
   &__cta {
     .c-btn-cta {
-      font-size: rem(14);
+      // 375pxで13px・390pxで14px（FV見出しと同様の微調整）
+      font-size: clamp(
+        #{rem(13)},
+        calc(13px + (100vw - 375px) / 15),
+        #{rem(14)}
+      );
       height: rem(60);
       padding: 0 rem(44); // アイコンとテキストが重ならないようにパディングを確保
     }

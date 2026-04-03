@@ -36,7 +36,6 @@
     align-self: center;
     color: #444;
     font-weight: $fw-bold;
-    letter-spacing: 0.048em;
     margin-bottom: rem(4);
 
     // タイトル下のあしらい線（fv-title-line.png は 638×24）
@@ -126,8 +125,10 @@
   }
 
   &__titleTop {
-    font-size: rem(30);
+    // 390px相当で30px・375px付近で約28px（微調整のみ。狭すぎる幅は28pxで下限）
+    font-size: clamp(#{rem(28)}, calc(28px + (100vw - 375px) * 2 / 15), #{rem(30)});
     letter-spacing: 0.04em;
+    line-height: 1.35;
   }
 
   &__titleBottom {

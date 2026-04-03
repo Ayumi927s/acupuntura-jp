@@ -26,7 +26,27 @@
   "phpcbf.onsave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "never"
-  }
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#a97e6c",
+    "activityBar.background": "#a97e6c",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#afd0b8",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#a97e6c",
+    "statusBar.background": "#8f6553",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#a97e6c",
+    "statusBarItem.remoteBackground": "#8f6553",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#8f6553",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#8f655399",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#8f6553"
   // "files.exclude": {
   //   "**/.git": false // .gitフォルダの非表示を解除 (.git/info/exclude に自分だけのこのワークスペースでのgitignoreを作成可能)
   // }

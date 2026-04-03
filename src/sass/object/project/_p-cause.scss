@@ -159,7 +159,10 @@ $p-cause-border: #aea5a5;
   }
 
   &__contentText {
-    margin: 0;
+    & + & {
+      margin-top: rem(16);
+    }
+
     font-family: $ff-sans;
     font-weight: $fw-medium;
     font-size: rem(16);
